@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
   <React.StrictMode>
-    Hello World
-  </React.StrictMode>,
-  document.getElementById('root')
+    Hello
+  </React.StrictMode>
 );
