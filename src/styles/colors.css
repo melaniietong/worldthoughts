@@ -1,0 +1,15 @@
+:root {
+    --black: #0F0F0F;
+    --blue-100: #D5EEF9;
+    --blue-200: #73C7EC;
+    --blue-300: #35AEE4;
+    --white: #FFFFFF;
+}
+
+.bg-blue-100 {
+    background-color: var(--blue-100);
+}
+
+.bg-white {
+    background-color: var(--white);
+}
