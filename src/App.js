@@ -11,8 +11,7 @@ import './styles/_import';
 const socket = io.connect("http://localhost:4000");
 
 function App() {
-
-    
+    // ======== SOCKET ====================================
     const yeet = () => {
         // After user submits votes, make call to server
         socket.emit("updateCall");
@@ -27,18 +26,17 @@ function App() {
     // ====================================================
 
     return (
-        <div className="
-            h-100 w-100 h-center v-center pos-fix 
-            bg-blue-100
-        ">
-            <BrowserRouter>
-                <Nav />
+        <BrowserRouter>
+            <Nav />
+            <div className="
+                flex h-100 w-100 h-center v-center pos-fix bg-blue-100
+            ">
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/create" element={<Create />} />
                 </Routes>
-            </BrowserRouter>
-        </div>
+            </div>
+        </BrowserRouter>
     );
 }
 
