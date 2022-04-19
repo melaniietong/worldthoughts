@@ -10,17 +10,3 @@ root.render(
     <App />
   </React.StrictMode>
 );
-
-// ======== FETCHING ==================================
-const temp = async() => {
-  try {
-    const response = await fetch("http://localhost:4000/polls");
-    const jsonData = await response.json();
-    console.log(jsonData);
-
-  } catch (err) {
-    console.error(err.message);
-  }
-}
-temp();
-// ====================================================

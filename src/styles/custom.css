@@ -1,0 +1,50 @@
+/* Home Page */
+
+.bubble:after {
+    content: "";
+    border-width: 25px 15px 0;
+    border-style: solid;
+    border-color: var(--gray) transparent;
+    position: absolute;
+    top: 100%;
+    right: 25px;
+}
+
+.button {
+    height: min-content;
+    width: min-content;
+    white-space: nowrap;
+    transition: 0.3s;
+}
+
+.button.bg-white:hover { background-color: var(--gray); }
+.button.bg-blue-300:hover { background-color: var(--blue-200); }
+
+.menu-item {
+    right: 0;
+    padding-right: 5%;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .main-container { max-width: 500px; }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .main-container { max-width: 500px; }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .main-container { max-width: 600px; }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .main-container { max-width: 800px; }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}

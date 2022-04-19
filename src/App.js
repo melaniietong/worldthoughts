@@ -29,7 +29,7 @@ function App() {
         <BrowserRouter>
             <Nav />
             <div className="
-                flex h-100 w-100 h-center v-center pos-fix bg-blue-100
+                flex h-100 w-100 h-center pos-fix bg-blue-100
             ">
                 <Routes>
                     <Route path="/" element={<Home />} />

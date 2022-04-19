@@ -1,24 +1,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Capriola&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-@import './colors.css';
 
-.logo {
-    font-family: 'Capriola', sans-serif;
-    color: var(--blue-300);
+h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
 }
 
-.menu {
-    font-family: 'Capriola', sans-serif;
-    color: var(--black);
+.button-large, .button-small, .menu {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
 }
+.logo { font-family: 'Capriola', sans-serif; }
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 14px;
+        line-height: 21px;
+    }
+    
     .logo {
         font-size: 22px;
         line-height: 33px;
     }
 
-    .menu {
+    .button-small {
+        font-size: 8px;
+        line-height: 12px;
+    }
+
+    .button-large, .menu {
         font-size: 12px;
         line-height: 18px;
     }
@@ -26,12 +36,22 @@
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
+    h1 {
+        font-size: 14px;
+        line-height: 21px;
+    }
+
     .logo {
         font-size: 24px;
         line-height: 36px;
     }
 
-    .menu {
+    .button-small {
+        font-size: 8px;
+        line-height: 12px;
+    }
+
+    .button-large, .menu {
         font-size: 12px;
         line-height: 18px;
     }
@@ -44,7 +64,12 @@
         line-height: 39px;
     }
 
-    .menu {
+    .button-small {
+        font-size: 10px;
+        line-height: 15px;
+    }
+
+    .button-large, .menu {
         font-size: 14px;
         line-height: 21px;
     }
@@ -52,6 +77,11 @@
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
+    h1 {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
     .logo {
         font-size: 28px;
         line-height: 42px;
@@ -60,13 +90,18 @@
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
+    h1 {
+        font-size: 18px;
+        line-height: 27px;
+    }
+
     .logo {
         font-size: 30px;
         line-height: 45px;
     }
 
-    .menu {
-        font-size: 16px;
-        line-height: 24px;
+    .button-small {
+        font-size: 12px;
+        line-height: 18px;
     }
 }

@@ -3,13 +3,17 @@
     --blue-100: #D5EEF9;
     --blue-200: #73C7EC;
     --blue-300: #35AEE4;
+    --gray: #F0F0F0;
     --white: #FFFFFF;
 }
 
-.bg-blue-100 {
-    background-color: var(--blue-100);
-}
+/* Background Colors */
+.bg-blue-100 { background-color: var(--blue-100); }
+.bg-blue-300 { background-color: var(--blue-300); }
+.bg-gray { background-color: var(--gray); }
+.bg-white { background-color: var(--white); }
 
-.bg-white {
-    background-color: var(--white);
-}
+/* Font Colors */
+.text-black { color: var(--black); }
+.text-blue-300 { color: var(--blue-300); }
+.text-white { color: var(--white); }
