@@ -1,29 +1,43 @@
-/* Home Page */
-
 .bubble:after {
     content: "";
     border-width: 25px 15px 0;
     border-style: solid;
-    border-color: var(--gray) transparent;
+    border-color: var(--blue-300) transparent;
     position: absolute;
     top: 100%;
     right: 25px;
 }
 
 .button {
+    user-select: none;
     height: min-content;
     width: min-content;
     white-space: nowrap;
     transition: 0.3s;
 }
 
-.button.bg-white:hover { background-color: var(--gray); }
+.button.bg-white:hover { background-color: var(--gray-100); }
 .button.bg-blue-300:hover { background-color: var(--blue-200); }
 
 .menu-item {
+    user-select: none;
     right: 0;
     padding-right: 5%;
 }
+
+input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+input:checked + label {
+    background: var(--blue-100);
+}
+
+::selection { background: var(--blue-100) }
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {

@@ -9,8 +9,8 @@ import '../../styles/_import';
     - isSmall   Boolean [true (small), false (large)]
 =================================================== */
 
-export default function Button({text, event, isBasic, isSmall }) {
-    let classes = "button border-10 pb-15 pl-25 pr-25 pt-15";
+export default function Button({ text, event, isBasic, isSmall }) {
+    let classes = "button border-r-10 pb-15 pl-25 pr-25 pt-15";
 
     if (isBasic) { classes += " bg-white text-black"
     } else { classes += " bg-blue-300 text-white" }

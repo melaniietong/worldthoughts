@@ -5,10 +5,11 @@ h1 {
     font-weight: 700;
 }
 
-.button-large, .button-small, .menu {
+p, .button-large, .button-small, .hint, .menu {
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
 }
+
 .logo { font-family: 'Capriola', sans-serif; }
 
 /* Extra small devices (phones, 600px and down) */
@@ -28,7 +29,7 @@ h1 {
         line-height: 12px;
     }
 
-    .button-large, .menu {
+    .button-large, .hint, .menu {
         font-size: 12px;
         line-height: 18px;
     }
@@ -51,7 +52,7 @@ h1 {
         line-height: 12px;
     }
 
-    .button-large, .menu {
+    .button-large, .hint, .menu {
         font-size: 12px;
         line-height: 18px;
     }
@@ -69,7 +70,7 @@ h1 {
         line-height: 15px;
     }
 
-    .button-large, .menu {
+    .button-large, .hint, .menu {
         font-size: 14px;
         line-height: 21px;
     }
