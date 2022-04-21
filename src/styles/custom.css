@@ -25,6 +25,14 @@
     padding-right: 5%;
 }
 
+label {
+    box-sizing: border-box;
+}
+
+.option-text {
+    width: 150px;
+}
+
 input {
     position: absolute;
     opacity: 0;
@@ -38,6 +46,8 @@ input:checked + label {
 }
 
 ::selection { background: var(--blue-100) }
+
+.nav { z-index: 99; }
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
