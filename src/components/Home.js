@@ -34,18 +34,15 @@ export default function Home() {
     }, [poll])
 
     return (
-        <div className='flex col w-100 v-center gap-32 pl-50 pr-50'>
+        <div className='flex col h-100 w-100 v-center gap-32 pl-50 pr-50'>
             <div className='
-                flex col w-100 border-r-10 bg-white pb-20 pl-25 gap-32 pr-25 pt-20 mt-50
+                flex col w-100 border-r-10 bg-white pb-20 pl-25 gap-32 pr-25 pt-20 
                 main-container
             '>
-                <div className="bubble pos-rel bg-blue-300 text-white border-r-10 pb-15 pl-25 pr-25 pt-15">
-                    <h1>{pollData && pollData.question}</h1>
-                </div>
+                <h1 className="bubble pos-rel bg-blue-300 text-white border-r-10 pb-15 pl-25 pr-25 pt-15">{pollData && pollData.question}</h1>
                 <p className='hint pl-25 text-gray-100'>Select <strong>{pollData && pollData.is_single ? "one" : "one or more"}</strong> from below.</p>
                 {pollData && <OptionGroup 
                     pollId = {pollData && pollData.poll_id} 
-                    isOption = {true}
                     isSingle = {pollData && pollData.is_single} 
                 />}
             </div>
@@ -53,7 +50,7 @@ export default function Home() {
                 text = "Random Question"
                 event = {getRandomPoll}
                 isBasic = {true}
-                isSmall = {false}
+                isSmall = {true}
             />
         </div>
     );
