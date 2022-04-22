@@ -18,6 +18,7 @@ export default function OptionGroup({ pollId, isSingle }) {
     const [selection, setSelection] = useState(); // State of user option selection
     const [userHistory, setUserHistory] = useState(); // State of if user answered the poll before
     const [display, setDisplay] = useState(true); // State to show results if user answered poll
+    const [error, setError] = useState(false); // State for error message
     
     const updateSelection = (e, value, id, isSingle) => {
         if (isSingle) { setSelection([value]); }
@@ -33,25 +34,30 @@ export default function OptionGroup({ pollId, isSingle }) {
 
     const submit = (e) => {
         e.preventDefault();
-        try {
-            selection.forEach(item => {
-                fetch("http://localhost:4000/answers", {
-                    method: "POST",
-                    headers: {
-                        'Accept': 'application/json',
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        poll_id: parseInt(pollId),
-                        option_id: parseInt(item),
-                        cookie: cookies.get('id'),
-                    })
+        if (selection.length > 0) {
+            setError(false);
+            try {
+                selection.forEach(item => {
+                    fetch("http://localhost:4000/answers", {
+                        method: "POST",
+                        headers: {
+                            'Accept': 'application/json',
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            poll_id: parseInt(pollId),
+                            option_id: parseInt(item),
+                            cookie: cookies.get('id'),
+                        })
+                    });
                 });
-            });
-            setSelection([]);
-            setDisplay(true);
-        } catch (err) {
-            console.error(err.message);
+                setSelection([]);
+                setDisplay(true);
+            } catch (err) {
+                console.error(err.message);
+            }
+        } else {
+            setError(true);
         }
     };
 
@@ -60,6 +66,7 @@ export default function OptionGroup({ pollId, isSingle }) {
         fetch(`http://localhost:4000/options?poll_id=${pollId}`)
             .then(response => response.json())
             .then(json => setOptions(json))
+        setSelection([]);
     }, [pollId]);
 
     useEffect(() => {
@@ -104,7 +111,10 @@ export default function OptionGroup({ pollId, isSingle }) {
                     }
                 })}
             </div>
-            <Button text={display ? "Resubmit" : "Submit"} isSmall={false} isBasic={false} event={submit}/>
+            <div className='flex row v-center'>
+                {error && <div className='error pr-25 text-red'>⚠️ Please select an option first!</div>}
+                <Button text={display ? "Resubmit" : "Submit"} isSmall={false} isBasic={false} event={submit}/>
+            </div>
         </form>
     ); 
 };

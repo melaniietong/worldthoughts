@@ -5,7 +5,7 @@ h1 {
     font-weight: 700;
 }
 
-p, .button-large, .button-small, .hint, .menu, .percent {
+p, .button-large, .button-small, .error, .hint, .menu, .percent {
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
 }
@@ -24,7 +24,7 @@ p, .button-large, .button-small, .hint, .menu, .percent {
         line-height: 33px;
     }
 
-    .button-small {
+    .button-small, .error {
         font-size: 8px;
         line-height: 12px;
     }
@@ -47,7 +47,7 @@ p, .button-large, .button-small, .hint, .menu, .percent {
         line-height: 36px;
     }
 
-    .button-small {
+    .button-small, .error {
         font-size: 8px;
         line-height: 12px;
     }
@@ -65,7 +65,7 @@ p, .button-large, .button-small, .hint, .menu, .percent {
         line-height: 39px;
     }
 
-    .button-small {
+    .button-small, .error {
         font-size: 10px;
         line-height: 15px;
     }
@@ -106,7 +106,7 @@ p, .button-large, .button-small, .hint, .menu, .percent {
         line-height: 45px;
     }
 
-    .button-small {
+    .button-small, .error {
         font-size: 12px;
         line-height: 18px;
     }
