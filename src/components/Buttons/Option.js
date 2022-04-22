@@ -1,8 +1,8 @@
 import React, { useState, useEffect }  from 'react';
-
 import '../../styles/_import';
 
 /* ======== PROPS ====================================
+    - socket    Socket
     - text      String
     - isSingle  Boolean [true (radio), false (checkbox)]
     - pollId    Number
@@ -11,9 +11,13 @@ import '../../styles/_import';
     - isResult  Boolean [true (result), false (option)]
 =================================================== */
 
-export default function Option({ text, isSingle, pollId, optionId, event, isResult }) {
+export default function Option({ socket, text, isSingle, pollId, optionId, event, isResult }) {
     const [resultTotal, setResultTotal] = useState();
     const [optionTotal, setOptionTotal] = useState();
+    const [refresh, setRefresh] = useState(1);
+
+    // Client receives a call from server to update display
+    socket.on("updateNow", () => { setRefresh(refresh * -1); });
 
     useEffect(() => {
         if (isResult) {
@@ -26,7 +30,7 @@ export default function Option({ text, isSingle, pollId, optionId, event, isResu
                 .then(response => response.json())
                 .then(json => setOptionTotal(json[0].count))
         }
-    }, [isResult, pollId, optionId]); 
+    }, [isResult, pollId, optionId, refresh]); 
 
     let percent = (parseInt(optionTotal)/parseInt(resultTotal)*100).toFixed(2);
 

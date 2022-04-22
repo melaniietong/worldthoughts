@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Button from './Buttons/Button';
 import OptionGroup from './Buttons/OptionGroup';
 
-export default function Home() {
+export default function Home({ socket }) {
     const [poll, setPoll] = useState([Math.floor(Math.random() * 5) + 1]);
     const [displayPoll, setDisplayPoll] = useState([]);
     const pollData = displayPoll[0];
@@ -42,6 +42,7 @@ export default function Home() {
                 <h1 className="bubble pos-rel bg-blue-300 text-white border-r-10 pb-15 pl-25 pr-25 pt-15">{pollData && pollData.question}</h1>
                 <p className='hint pl-25 text-gray-100'>Select <strong>{pollData && pollData.is_single ? "one" : "one or more"}</strong> from below.</p>
                 {pollData && <OptionGroup 
+                    socket = {socket}
                     pollId = {pollData && pollData.poll_id} 
                     isSingle = {pollData && pollData.is_single} 
                 />}

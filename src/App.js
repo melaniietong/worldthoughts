@@ -18,20 +18,6 @@ function App() {
         cookies.set("id", getRandomString());
     }
 
-    // ======== SOCKET ====================================
-    const yeet = () => {
-        // After user submits votes, make call to server
-        socket.emit("updateCall");
-    };
-
-    // Client receives a call from server to update display
-    socket.on("updateNow", () => {
-        console.log("2 I'm updated now!");
-    });
-
-    yeet();
-    // ====================================================
-
     return (
         <BrowserRouter>
             <Nav />
@@ -39,7 +25,7 @@ function App() {
                 flex h-100 w-100 h-center bg-blue-100 pt-100
             ">
                 <Routes>
-                    <Route path="/" element={<Home />} />
+                    <Route path="/" element={<Home socket={socket} />} />
                     <Route path="/create" element={<Create />} />
                 </Routes>
             </div>
