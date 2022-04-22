@@ -25,13 +25,7 @@
     padding-right: 5%;
 }
 
-label {
-    box-sizing: border-box;
-}
-
-.option-text {
-    width: 150px;
-}
+.option-text { width: 150px; }
 
 input {
     position: absolute;

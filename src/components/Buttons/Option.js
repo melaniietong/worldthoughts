@@ -5,7 +5,7 @@ import '../../styles/_import';
 /* ======== PROPS ====================================
     - text      String
     - isSingle  Boolean [true (radio), false (checkbox)]
-    - groupName Number
+    - pollId    Number
     - optionId  Number
     - event     Function
     - isResult  Boolean [true (result), false (option)]
@@ -30,25 +30,36 @@ export default function Option({ text, isSingle, pollId, optionId, event, isResu
 
     let percent = (parseInt(optionTotal)/parseInt(resultTotal)*100).toFixed(2);
 
-    return (
-        <>
-            <input 
-                id = {text}
-                type = {isSingle ? "radio" : "checkbox"}
-                name = {pollId}
-                value = {optionId}
-                onChange = {e => event(e, e.target.value, pollId, isSingle)}
-            />
-            <label htmlFor={text} className="flex v-center h-start w-100 row gap-8 border-1 border-gray border-r-10 pb-20 pl-25 pr-25 pt-20">
-                <p className={isResult ? "option-text" : ""}>{text}</p>
-                {isResult ? 
-                    <div className='percent w-100'>
-                        <div className="pa-5 bg-gray-100 text-gray-200" style={{width:`${percent}%`}}>{percent}%</div>
+    if (isResult) {
+        return (
+            <div className={`flex v-center h-start w-100 row gap-8 border-1 border-gray border-r-10 pb-20 pl-25 pr-25 pt-20 bs-bb`}>
+                <p className={isResult ? "option-text" : undefined}>{text}</p>
+                <div className='percent w-100'>
+                    <div 
+                        className = {"pa-5 text-gray-200 bg-gray-100"}
+                        style = {{width:`${percent}%`}}
+                    >
+                        {percent}%
                     </div>
-                    : 
-                    <></>
-                }
-            </label>
-        </>
-    );
+                </div>
+            </div>
+        );
+    } else {
+        return (
+            <>
+                <input 
+                    id = {text}
+                    type = {isSingle ? "radio" : "checkbox"}
+                    name = {pollId}
+                    value = {optionId}
+                    onChange = {e => event(e, e.target.value, pollId, isSingle)}
+                />
+                <label htmlFor={text} className={`flex v-center h-start w-100 row gap-8 border-1 border-gray border-r-10 pb-20 pl-25 pr-25 pt-20 bs-bb`}>
+                    <p className={isResult ? "option-text" : undefined}>{text}</p>
+                </label>
+            </>
+        );
+    }
+
+
 };

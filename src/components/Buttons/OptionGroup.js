@@ -20,6 +20,7 @@ export default function OptionGroup({ pollId, isSingle }) {
     const [display, setDisplay] = useState(true); // State to show results if user answered poll
     const [error, setError] = useState(false); // State for error message
     
+    // Keeps track of current user's selection; to be submitted on submit
     const updateSelection = (e, value, id, isSingle) => {
         if (isSingle) { setSelection([value]); }
             else {
@@ -78,13 +79,14 @@ export default function OptionGroup({ pollId, isSingle }) {
         setSelection([]);
     }, [pollId]);
 
+    // Check if user already answered the poll
     useEffect(() => {
-        // Check if user already answered the poll
         fetch(`http://localhost:4000/answers/user?poll_id=${pollId}&cookie=${cookies.get('id')}`)
             .then(response => response.json())
             .then(json => setUserHistory(json))
     }, [pollId]);
 
+    // Display results page if user answered the poll
     useEffect(() => {
         if (userHistory && userHistory.length > 0) { setDisplay(true) }
             else { setDisplay(false) }
@@ -102,6 +104,7 @@ export default function OptionGroup({ pollId, isSingle }) {
                         optionId = {item.option_id}
                         event = {updateSelection}
                         isResult = {display? true : false}
+                        history = {userHistory}
                     />
                 })}
             </div>
