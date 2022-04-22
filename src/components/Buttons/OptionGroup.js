@@ -61,6 +61,15 @@ export default function OptionGroup({ pollId, isSingle }) {
         }
     };
 
+    const resubmit = (e) => {
+        e.preventDefault();
+        fetch(`http://localhost:4000/answers?poll_id=${pollId}&cookie=${cookies.get('id')}`, {
+            method: "DELETE"
+        });
+        setSelection([]);
+        setDisplay(false);
+    };
+
     // Get poll data
     useEffect(() => {
         fetch(`http://localhost:4000/options?poll_id=${pollId}`)
@@ -77,43 +86,32 @@ export default function OptionGroup({ pollId, isSingle }) {
     }, [pollId]);
 
     useEffect(() => {
-        if (userHistory && userHistory.length > 0) { 
-            setDisplay(true) 
-        } else { 
-            setDisplay(false) 
-        }
+        if (userHistory && userHistory.length > 0) { setDisplay(true) }
+            else { setDisplay(false) }
     }, [userHistory, pollId]);
 
     return(
         <form className='flex col v-end gap-32'>
             <div className='flex col v-start w-100 gap-8'>
                 {options && options.map(item => {
-                    if (display) {
-                        return <Option 
-                            key = {item.option_id}
-                            text = {item.title}
-                            isSingle = {isSingle}
-                            pollId = {pollId}
-                            optionId = {item.option_id}
-                            event = {updateSelection}
-                            isResult = {true}
-                        />
-                    } else {
-                        return <Option 
-                            key = {item.option_id}
-                            text = {item.title}
-                            isSingle = {isSingle}
-                            pollId = {pollId}
-                            optionId = {item.option_id}
-                            event = {updateSelection}
-                            isResult = {false}
-                        />
-                    }
+                    return <Option 
+                        key = {item.option_id}
+                        text = {item.title}
+                        isSingle = {isSingle}
+                        pollId = {pollId}
+                        optionId = {item.option_id}
+                        event = {updateSelection}
+                        isResult = {display? true : false}
+                    />
                 })}
             </div>
             <div className='flex row v-center'>
                 {error && <div className='error pr-25 text-red'>⚠️ Please select an option first!</div>}
-                <Button text={display ? "Resubmit" : "Submit"} isSmall={false} isBasic={false} event={submit}/>
+                <Button 
+                    text = {display ? "Resubmit" : "Submit"}
+                    isSmall = {false}
+                    isBasic = {false}
+                    event = {display ? resubmit : submit}/>
             </div>
         </form>
     ); 
