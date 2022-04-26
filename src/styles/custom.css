@@ -50,4 +50,7 @@ input:focus { outline-color: var(--blue-100); }
 @media only screen and (min-width: 600px) { .main-container { margin: 0 15%; } }
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) { .main-container { margin: 0 25%; } }
+@media only screen and (min-width: 768px) { .main-container { margin: 0 20%; } }
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) { .main-container { margin: 0 25%; } }
