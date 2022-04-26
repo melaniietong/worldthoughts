@@ -14,15 +14,13 @@ const socket = io.connect("http://localhost:4000");
 const cookies = new Cookies();
 
 function App() {
-    if (!cookies.get("id")) {
-        cookies.set("id", getRandomString());
-    }
+    if (!cookies.get("id")) { cookies.set("id", getRandomString()); }
 
     return (
         <BrowserRouter>
             <Nav />
             <div className="
-                flex h-100 w-100 h-center bg-blue-100 pt-100
+                flex h-100 w-100 h-center bg-blue-100 pt-100 pb-50
             ">
                 <Routes>
                     <Route path="/" element={<Home socket={socket} />} />

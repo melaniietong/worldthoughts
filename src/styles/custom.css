@@ -27,7 +27,7 @@
 
 .option-text { width: 150px; }
 
-input {
+.poll {
     position: absolute;
     opacity: 0;
     cursor: pointer;
@@ -35,34 +35,19 @@ input {
     width: 0;
 }
 
-input:checked + label {
-    background: var(--blue-100);
-}
+.percent { white-space: nowrap; }
 
+input:focus { outline-color: var(--blue-100); }
+.poll:checked + label { background: var(--blue-100); }
 ::selection { background: var(--blue-100) }
 
 .nav { z-index: 99; }
 
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-    .main-container { max-width: 500px; }
-}
+@media only screen and (max-width: 600px) { .main-container { margin: 0 10%; } }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-    .main-container { max-width: 500px; }
-}
+@media only screen and (min-width: 600px) { .main-container { margin: 0 15%; } }
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-    .main-container { max-width: 600px; }
-}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-    .main-container { max-width: 800px; }
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-}
+@media only screen and (min-width: 768px) { .main-container { margin: 0 25%; } }

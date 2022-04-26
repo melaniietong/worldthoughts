@@ -34,10 +34,9 @@ export default function Home({ socket }) {
     }, [poll])
 
     return (
-        <div className='flex col h-100 w-100 v-center gap-32 pl-50 pr-50'>
+        <div className='flex col h-100 w-100 v-center gap-32 main-container'>
             <div className='
-                flex col w-100 border-r-10 bg-white pb-20 pl-25 gap-32 pr-25 pt-20 
-                main-container
+                flex col w-100 border-r-10 bg-white pb-20 pl-25 gap-32 pr-25 pt-20
             '>
                 <h1 className="bubble pos-rel bg-blue-300 text-white border-r-10 pb-15 pl-25 pr-25 pt-15">{pollData && pollData.question}</h1>
                 <p className='hint pl-25 text-gray-100'>Select <strong>{pollData && pollData.is_single ? "one" : "one or more"}</strong> from below.</p>

@@ -19,7 +19,6 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
 	vertical-align: baseline;
 }
 
@@ -52,7 +51,7 @@ table {
 	border-spacing: 0;
 }
 
-button, input[type="submit"], input[type="reset"] {
+button, input[type="submit"] {
 	background: none;
 	color: inherit;
 	border: none;
@@ -67,5 +66,5 @@ a {
 }
 
 html, body, #root, .App {
-	height: 100vh;
+	height: 100%;
 }

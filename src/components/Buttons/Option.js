@@ -37,13 +37,13 @@ export default function Option({ socket, text, isSingle, pollId, optionId, event
     if (isResult) {
         return (
             <div className={`flex v-center h-start w-100 row gap-8 border-1 border-gray border-r-10 pb-20 pl-25 pr-25 pt-20 bs-bb`}>
-                <p className={isResult ? "option-text" : undefined}>{text}</p>
+                <div className="option-text">{text}</div>
                 <div className='percent w-100'>
                     <div 
                         className = {"pa-5 text-gray-200 bg-gray-100"}
                         style = {{width:`${percent}%`}}
                     >
-                        {percent}%
+                        {percent}% — {optionTotal} votes
                     </div>
                 </div>
             </div>
@@ -57,9 +57,10 @@ export default function Option({ socket, text, isSingle, pollId, optionId, event
                     name = {pollId}
                     value = {optionId}
                     onChange = {e => event(e, e.target.value, pollId, isSingle)}
+                    className="poll"
                 />
                 <label htmlFor={text} className={`flex v-center h-start w-100 row gap-8 border-1 border-gray border-r-10 pb-20 pl-25 pr-25 pt-20 bs-bb`}>
-                    <p className={isResult ? "option-text" : undefined}>{text}</p>
+                    {text}
                 </label>
             </>
         );
