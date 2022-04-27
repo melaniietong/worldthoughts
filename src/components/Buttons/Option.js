@@ -1,4 +1,5 @@
 import React, { useState, useEffect }  from 'react';
+
 import '../../styles/_import';
 
 /* ======== PROPS ====================================
@@ -65,6 +66,4 @@ export default function Option({ socket, text, isSingle, pollId, optionId, event
             </>
         );
     }
-
-
 };

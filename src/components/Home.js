@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
+import '../styles/_import';
 import Button from './Buttons/Button';
 import OptionGroup from './Buttons/OptionGroup';
 

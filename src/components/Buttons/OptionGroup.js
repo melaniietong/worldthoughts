@@ -121,7 +121,8 @@ export default function OptionGroup({ socket, pollId, isSingle }) {
                     text = {display ? "Resubmit" : "Submit"}
                     isSmall = {false}
                     isBasic = {false}
-                    event = {display ? resubmit : submit}/>
+                    event = {display ? resubmit : submit}
+                />
             </div>
         </form>
     ); 
