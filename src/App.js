@@ -18,12 +18,10 @@ function App() {
   return (
     <BrowserRouter>
       <Nav />
-      <div className="flex h-100 w-100 h-center pt-100 pb-50 bg-blue-100">
-        <Routes>
-          <Route path="/" element={<Home socket={socket} />} />
-          <Route path="/create" element={<Create />} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/" element={<Home socket={socket} />} />
+        <Route path="/create" element={<Create />} />
+      </Routes>
     </BrowserRouter>
   );
 }
