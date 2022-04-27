@@ -1,6 +1,6 @@
 import React from 'react';
 import io from 'socket.io-client';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Cookies from 'universal-cookie';
 
 import Create from './components/Create';
@@ -21,6 +21,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home socket={socket} />} />
         <Route path="/create" element={<Create />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
   );

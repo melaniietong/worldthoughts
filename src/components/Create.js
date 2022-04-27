@@ -68,9 +68,9 @@ export default function Create() {
   };
 
   return (
-    <div className="flex w-100 h-center pt-100 pb-50 bg-blue-100">
+    <div className={`flex w-100 h-center pt-100 pb-50 bg-blue-100 ${success && "h-100"}`}>
       <div className="main-container flex col h-100 w-100 v-center">
-        <div className="flex col w-100 gap-32 pt-20 pb-20 pl-25 pr-25 border-r-10 bg-white">
+        <div className={`flex col w-100 gap-32 pt-20 pb-20 pl-25 pr-25 border-r-10 bg-white ${success && "pb-50"}`}>
             <h1 className="bubble pos-rel pt-15 pb-15 pl-25 pr-25 border-r-10 bg-blue-300 text-white">
                 {success ? "Thank you for your submission!" : "Submit a question. Get the world's thoughts on it."}
             </h1>
