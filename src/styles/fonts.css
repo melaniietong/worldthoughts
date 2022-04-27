@@ -5,7 +5,7 @@ h1 {
     font-weight: 700;
 }
 
-label, .button-large, .button-small, .error, .hint, .menu, .percent, .option-text {
+label, .button-large, .button-small, .hint, .menu, .percent, .option-text {
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
 }
@@ -29,7 +29,7 @@ label, .button-large, .button-small, .error, .hint, .menu, .percent, .option-tex
         line-height: 15px;
     }
 
-    .button-small, .error, .hint, .menu, .percent  {
+    .button-small, .hint, .menu, .percent  {
         font-size: 8px;
         line-height: 12px;
     }
@@ -52,7 +52,7 @@ label, .button-large, .button-small, .error, .hint, .menu, .percent, .option-tex
         line-height: 15px;
     }
 
-    .button-small, .error, .hint, .menu, .percent  {
+    .button-small, .hint, .menu, .percent  {
         font-size: 8px;
         line-height: 12px;
     }
@@ -75,7 +75,7 @@ label, .button-large, .button-small, .error, .hint, .menu, .percent, .option-tex
         line-height: 18px;
     }
 
-    .button-small, .error, .hint, .menu, .percent  {
+    .button-small, .hint, .menu, .percent  {
         font-size: 10px;
         line-height: 15px;
     }
@@ -98,7 +98,7 @@ label, .button-large, .button-small, .error, .hint, .menu, .percent, .option-tex
         line-height: 21px;
     }
 
-    .button-small, .error, .hint, .menu, .percent  {
+    .button-small, .hint, .menu, .percent  {
         font-size: 12px;
         line-height: 18px;
     }

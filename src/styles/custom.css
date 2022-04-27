@@ -1,3 +1,4 @@
+/* ======== GENERAL ================================== */
 .bubble:after {
     content: "";
     border-width: 25px 15px 0;
@@ -19,30 +20,6 @@
 .button.bg-white:hover { background-color: var(--gray-100); }
 .button.bg-blue-300:hover { background-color: var(--blue-200); }
 
-.menu-item {
-    user-select: none;
-    right: 0;
-    padding-right: 5%;
-}
-
-.option-text { width: 150px; }
-
-.poll {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-}
-
-.percent { white-space: nowrap; }
-
-input:focus { outline-color: var(--blue-100); }
-.poll:checked + label { background: var(--blue-100); }
-::selection { background: var(--blue-100) }
-
-.nav { z-index: 99; }
-
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) { .main-container { margin: 0 10%; } }
 
@@ -54,3 +31,29 @@ input:focus { outline-color: var(--blue-100); }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) { .main-container { margin: 0 25%; } }
+
+/* ======== NAV ====================================== */
+.menu {
+    user-select: none;
+    right: 0;
+    padding-right: 5%;
+}
+
+.nav { z-index: 99; }
+
+/* ======== POLL ===================================== */
+.option-text { width: 150px; }
+.percent { white-space: nowrap; }
+
+input:focus { outline-color: var(--blue-100); }
+
+.poll {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.poll:checked + label { background: var(--blue-100); }
+::selection { background: var(--blue-100) }

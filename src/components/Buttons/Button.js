@@ -10,15 +10,12 @@ import '../../styles/_import';
 =================================================== */
 
 export default function Button({ text, event, isBasic, isSmall }) {
-    let classes = "button border-r-10 pb-15 pl-25 pr-25 pt-15";
+  let classes = 'button pt-15 pb-15 pl-25 pr-25 border-r-10';
 
-    if (isBasic) { classes += " bg-white text-black"
-    } else { classes += " bg-blue-300 text-white" }
+  if (isBasic) { classes += ' bg-white text-black'; } else { classes += ' bg-blue-300 text-white'; }
+  if (isSmall) { classes += ' button-small'; } else { classes += ' button-large'; }
 
-    if (isSmall) { classes += " button-small"
-    } else { classes += " button-large" }
-
-    return (
-        <button onClick={event} className={classes}>{text}</button>
-    );
-};
+  return (
+    <button onClick={event} className={classes}>{text}</button>
+  );
+}
