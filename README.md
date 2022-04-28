@@ -18,7 +18,7 @@ A simple and friendly real-time polling application.
 ## Setup
 
 ```diff
-! ⚠️ Please setup the API first ⚠️
+!  ⚠️ Please setup the API first before this client ⚠️
 ``` 
 
 1. Install Node.js and npm.
@@ -29,11 +29,11 @@ A simple and friendly real-time polling application.
 
 ## Preview
 
-![Explore random polls](https://github.com/melaniietong/worldthoughts/blob/23394e8c9ec960b9dce4de088832daf610fc8abe/public/images/preview1.png?raw=true)
+![Explore random polls](./public/images/preview1.png)
 > Explore random polls.
 
-![Vote on polls and discover what the world thinks about it](https://github.com/melaniietong/worldthoughts/blob/23394e8c9ec960b9dce4de088832daf610fc8abe/public/images/preview2.png?raw=true)
+![Vote on polls and discover what the world thinks about it](./public/images/preview2.png)
 > Vote on polls and discover what the world thinks about it.
 
-![Submit your own questions](https://github.com/melaniietong/worldthoughts/blob/23394e8c9ec960b9dce4de088832daf610fc8abe/public/images/preview3.png?raw=true)
+![Submit your own questions](./public/images/preview3.png)
 > Submit your own questions.
