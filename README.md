@@ -9,6 +9,8 @@ A simple and friendly real-time polling application.
 
 [Check out the **API** for Worldthoughts here!](https://github.com/melaniietong/worldthoughts-api)
 
+Created as part of my application for IGN's Code Foo 10. Read my introduction [here](./responses/introduction.md) and my response to the Voltorb prompt [here](./responses/voltorb.md).
+
 ## Dependencies
 - React
 - React-router / react-router-dom
